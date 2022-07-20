@@ -1,3 +1,6 @@
+#include <TransToAlph.h>
+#include <displayLetter.h>
+
 int next_button = 18;
 int next_buttonState = 0;     // current state of the button
 int next_lastButtonState = 0; // previous state of the button
@@ -16,86 +19,65 @@ int write_idleTime = 0;        // how long the button was idle
 
 String prev_input;
 
-String result;
+String morse_result;
 
+String alph_result;
 
-const int buttonPin = 2;  
-
-void listen_button() {
-  if (digitalRead(next_button) == LOW) {
-    Serial.println("enter");
-
-    if (prev_input == "enter") {
-        morse(result);
-        Serial.println(result);
-        result = "";
-    } else {
-        result += ";";
-        Serial.println(";");
-    }
-
-    prev_input = "enter";
-  } else if (digitalRead(write_button) == LOW) {
-    Serial.print("write :");
-
-    if (prev_input == "write") {
-        result += "-";
-        Serial.println("-");
-    } else {
-        result += ".";
-        Serial.println(".");
-    }
-
-    prev_input = "write";
-  } else {
-    prev_input = "empty";
-  }
-}
-
-void write_updateState() {
-    
-  // the button has been just pressed
+void write_updateState() 
+{
   if (write_buttonState == LOW) {
     write_startPressed = millis();
-  // the button has been just released
   } else {
     write_endPressed = millis();
     write_holdTime = write_endPressed - write_startPressed;
 
     if (write_holdTime < 500) {
-        Serial.println(".");
-        result += "."; 
+        morse_result += "."; 
     }
 
     if (write_holdTime >= 500) {
-        Serial.println("-"); 
-        result += "-"; 
+        morse_result += "-"; 
     }
 
-    Serial.println(write_holdTime);
+    Serial.println(morse_result);
   }
 }
 
-void next_updateState() {
-    
-  // the button has been just pressed
+void next_updateState() 
+{    
   if (next_buttonState == LOW) {
     next_startPressed = millis();
-  // the button has been just released
   } else {
     next_endPressed = millis();
     next_holdTime = next_endPressed - next_startPressed;
 
     if (next_holdTime < 500) {
-        Serial.println(";");
-        result += ";";
+        alph_result += translateToLetter(morse_result);
+
+        morse_result = "";   
     }
 
     if (next_holdTime >= 500) {
-        morse(result);
-        Serial.println(result);
-        result = "";    }
+      
+      for (size_t i = 0; i < alph_result.length(); i++)
+      {
+        for (size_t j = 0; j < 8; j++)
+        {
+          //displayLetter(alph_result[i], j);
+          PrintMSG(alph_result[i], j);
+          matrix.pixels->show();
+          Serial.print(alph_result[i]);
+          Serial.println(j);
+          delay(100);
+          matrix.Clear();
+        }
+      }
 
-    Serial.println(next_holdTime);
+
+      morse_result = "";   
+      alph_result = "";
+    }
+
+    Serial.println(alph_result);
   }
 }

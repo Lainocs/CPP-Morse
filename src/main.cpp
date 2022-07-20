@@ -14,16 +14,16 @@ void setup() {
   point();
   pinMode(write_button,INPUT_PULLUP);
   pinMode(next_button,INPUT_PULLUP);
-
-  result = "";
+  morse_result = "";
 }
 
 void loop() {
   if(Bt.Available()){
     String msg = Bt.ReadCommand();
     Serial.println(msg);
-    translate(msg);
+    translateToMorse(msg);
   }
+
   next_buttonState = digitalRead(next_button);
   write_buttonState = digitalRead(write_button);
 

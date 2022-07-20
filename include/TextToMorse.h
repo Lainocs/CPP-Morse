@@ -59,7 +59,7 @@ void morse(String msg) {
   }
 }
 
-void translate(String message) {
+void translateToMorse(String message) {
   digitalWrite(display_info, HIGH);
 
   message.toUpperCase();
