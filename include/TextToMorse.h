@@ -1,14 +1,10 @@
-/*#include <Arduino.h>
 #include <PikControlMatrixLib.h>
 
 PikControlMatrix8x8 matrix(21);
 
 int BUZZER = 22;
 int display_info = 21;
-String message;
-int freq = 250;
 const int temps = 250;
-
 
 void tiret(){
   digitalWrite(BUZZER, HIGH);
@@ -30,11 +26,6 @@ void tiret(){
   delay(temps);
 }
 
-void askName() {
-  // prompt user for message and set it to message
-}
-
-
 void point(){
   digitalWrite(BUZZER, HIGH);
   matrix.GenerateSquarre(2,3,1,250,130,10);
@@ -48,8 +39,6 @@ void point(){
 }
 
 void morse(String msg) {
-  //Serial.println(msg);
-  //Serial.print(String(msg.length()));
   for(int i = 0; i<msg.length(); i++) {
     if (msg.substring(i, i+1) == "-") {
       Serial.print("-");
@@ -68,12 +57,9 @@ void morse(String msg) {
       delay(7*temps);
     }
   }
-}*/
-/*
-void setup() {
-  Serial.begin(9600);
-  pinMode(BUZZER, OUTPUT);
+}
 
+void translate(String message) {
   digitalWrite(display_info, HIGH);
 
   message.toUpperCase();
@@ -129,22 +115,5 @@ void setup() {
   message = message + "|";
   message.replace(";|","|");
 
+  morse(message);
 }
-
-void loop() {
-  char c;
-  while (Serial.available()) {
-    int i = Serial.read();
-    c = (char)i;
-    if(c!='<') {
-      message += c;
-    }
-    Serial.println((char)i);
-  }
-
-  if(message != ""&& c=='<'){
-    //morse(message);
-    Serial.print(message);
-    message = "";
-  }
-}*/
