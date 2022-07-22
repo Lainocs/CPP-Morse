@@ -47,7 +47,7 @@ La traduction de morse vers lettre ne permet de traduire qu'un mot par un mot, p
 - Rester appuyé sur le bouton `Enter` (en vert) pour vider la mémoire.
 - Utiliser le bouton `Write` (en bleu) pour écrire votre lettre, en restant appuyé pour un tiret, ou en appuyant rapidement pour un point.
 - Pour passer à la lettre suivante, appuyé une fois rapide sur le bouton `Enter`.
-- Une fois votre mot terminé, restez de nouveau appuyé sur le bouton `Enter` pour afficher votre mot sur l'écran LED.
+- Une fois votre mot terminé, appuyé une fois sur le bouton `Enter` pour valider votre dernière lettre, puis restez de nouveau appuyé dessus pour afficher votre mot sur l'écran LED.
 
 ### Alphabet -> Morse :
 
