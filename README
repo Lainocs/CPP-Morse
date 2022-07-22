@@ -31,3 +31,49 @@
 ## <u> Schéma</u> :
 
 <img src="./img/schema.png">
+
+## <u> Utilisation</u> :
+
+### Texte vers Morse :
+
+- Se connecter à l'appareil `Morse` en Bluetooth.
+- A l'aide du terminal de votre choix, envoyer votre texte à traduire à la machine.
+
+
+### Morse vers texte :
+
+La traduction de morse vers lettre ne permet de traduire qu'un mot par un mot, pas des phrases entières.
+
+- Rester appuyé sur le bouton `Enter` (en vert) pour vider la mémoire.
+- Utiliser le bouton `Write` (en bleu) pour écrire votre lettre, en restant appuyé pour un tiret, ou en appuyant rapidement pour un point.
+- Pour passer à la lettre suivante, appuyé une fois rapide sur le bouton `Enter`.
+- Une fois votre mot terminé, restez de nouveau appuyé sur le bouton `Enter` pour afficher votre mot sur l'écran LED.
+
+### Alphabet -> Morse :
+
+- A -> .-
+- B -> -...
+- C -> -.-.
+- D -> -..
+- E -> .
+- F -> ..-.
+- G -> --.
+- H -> ....
+- I -> ..
+- J -> .---
+- K -> -.-
+- L -> .-..
+- M -> --
+- N -> -.
+- O -> ---
+- P -> .--.
+- Q -> --.-
+- R -> .-.
+- S -> ...
+- T -> -
+- U -> ..-
+- V -> ...-
+- W -> .--
+- X -> -..-
+- Y -> -.--
+- Z -> --..
