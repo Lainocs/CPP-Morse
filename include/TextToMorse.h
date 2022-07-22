@@ -8,18 +8,20 @@ const int temps = 250;
 
 void tiret(){
   digitalWrite(BUZZER, HIGH);
-  matrix.GenerateSquarre(4,2,1,250,130,10);
-  matrix.GenerateSquarre(4,3,1,250,130,10);
-  matrix.GenerateSquarre(4,4,1,250,130,10);
-  matrix.GenerateSquarre(4,5,1,250,130,10);
-  matrix.GenerateSquarre(4,6,1,250,130,10);
-  matrix.GenerateSquarre(4,7,1,250,130,10);
-  matrix.GenerateSquarre(3,2,1,250,130,10);
-  matrix.GenerateSquarre(3,3,1,250,130,10);
+  matrix.GenerateSquarre(1,4,1,250,130,10);
+  matrix.GenerateSquarre(2,4,1,250,130,10);
   matrix.GenerateSquarre(3,4,1,250,130,10);
-  matrix.GenerateSquarre(3,5,1,250,130,10);
-  matrix.GenerateSquarre(3,6,1,250,130,10);
-  matrix.GenerateSquarre(3,7,1,250,130,10);
+  matrix.GenerateSquarre(4,4,1,250,130,10);
+  matrix.GenerateSquarre(5,4,1,250,130,10);
+  matrix.GenerateSquarre(6,4,1,250,130,10);
+  //matrix.GenerateSquarre(7,4,1,250,130,10);
+  matrix.GenerateSquarre(1,3,1,250,130,10);
+  matrix.GenerateSquarre(2,3,1,250,130,10);
+  matrix.GenerateSquarre(3,3,1,250,130,10);
+  matrix.GenerateSquarre(4,3,1,250,130,10);
+  matrix.GenerateSquarre(5,3,1,250,130,10);
+  matrix.GenerateSquarre(6,3,1,250,130,10);
+  //matrix.GenerateSquarre(7,3,1,250,130,10);
   delay(3*temps);
   matrix.Clear();
   digitalWrite(BUZZER, LOW);
@@ -28,10 +30,10 @@ void tiret(){
 
 void point(){
   digitalWrite(BUZZER, HIGH);
-  matrix.GenerateSquarre(2,3,1,250,130,10);
-  matrix.GenerateSquarre(2,3,2,250,130,10);
-  matrix.GenerateSquarre(2,3,3,250,130,10);
-  matrix.GenerateSquarre(2,3,4,250,130,10);
+  matrix.GenerateSquarre(2,2,1,250,130,10);
+  matrix.GenerateSquarre(2,2,2,250,130,10);
+  matrix.GenerateSquarre(2,2,3,250,130,10);
+  matrix.GenerateSquarre(2,2,4,250,130,10);
   delay(temps);
   matrix.Clear();
   digitalWrite(BUZZER, LOW);
