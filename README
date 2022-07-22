@@ -1,0 +1,33 @@
+# DVIC Explorer
+### Rendu du cours de Creative Dev, la semaine du 18 juillet 2022
+
+<br>
+
+## *Bip Bip Bop Machine*
+
+<br>
+
+## <u> Liste des membres</u> :
+- Nicolas DE GARRIGUES
+- Tom LOUVEAU
+- Julien COUSIN-ALLIOT
+- Malo BRAUNSCHWEIG
+- Claire BRISBART
+
+## <u> Description</u> :
+
+<p>Communiquer en morse n'a jamais été aussi facile. Vous pouvez écrire votre phrase en n'importe quelle langue utilisant l'alphabet latin, elle sera automatiquement traduite en morse.</p>
+<p>À l'inverse, vous pouvez écrire en morse grâce aux boutons présents sur la machine.</p>
+
+## <u> Liste de Matériel</u> :
+
+- ESP 32 x1
+- Matrice de LED x1
+- Buzzer x1
+- Boutons x2
+- Potentiomètre x1
+- Fils x 13
+
+## <u> Schéma</u> :
+
+<img src="./img/schema.png">
