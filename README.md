@@ -34,11 +34,13 @@
 
 ## <u> Utilisation</u> :
 
+/!\ En raison d'un problème avec la batterie, il faut garder la machine connecté à un PC pour qu'elle tourne correctement /!\
+
 ### Texte vers Morse :
 
 - Se connecter à l'appareil `Morse` en Bluetooth.
 - A l'aide du terminal de votre choix, envoyer votre texte à traduire à la machine.
-
+(Tests réalisés à l'aide de `Serial Bluetooth Terminal sur le Google Play Store`, les iPhones semblent avoir du mal à detecter la machine en BT)
 
 ### Morse vers texte :
 
