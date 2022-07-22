@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <PikBtLib.h>
 #include <TextToMorse.h>
+#include <MorseToText.h>
 
 PikBt Bt = PikBt();
 
@@ -10,13 +11,30 @@ void setup() {
   Serial.begin(9600);
   Bt.Init("Morse");
   pinMode(BUZZER, OUTPUT);
+  point();
+  pinMode(write_button,INPUT_PULLUP);
+  pinMode(next_button,INPUT_PULLUP);
+  morse_result = "";
 }
 
 void loop() {
   if(Bt.Available()){
     String msg = Bt.ReadCommand();
     Serial.println(msg);
-    translate(msg);
+    translateToMorse(msg);
   }
-  delay(100);
+
+  next_buttonState = digitalRead(next_button);
+  write_buttonState = digitalRead(write_button);
+
+  if (next_buttonState != next_lastButtonState) {
+     next_updateState();
+  }
+
+  if (write_buttonState != write_lastButtonState) {
+     write_updateState();
+  }
+
+  next_lastButtonState = next_buttonState;
+  write_lastButtonState = write_buttonState;
 }
