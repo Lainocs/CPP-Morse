@@ -8,8 +8,10 @@ PikBt Bt = PikBt();
 String message;
 
 void setup() {
+  digitalWrite(BUZZER, HIGH);
   Serial.begin(9600);
-  Bt.Init("Morse");
+  Bt.Init("Morze");
+  printf("Bluetooth initialized\n");
   pinMode(BUZZER, OUTPUT);
   point();
   pinMode(write_button,INPUT_PULLUP);

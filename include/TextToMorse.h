@@ -3,11 +3,13 @@
 PikControlMatrix8x8 matrix(21);
 
 int BUZZER = 22;
+int POINT = 300;
+int TIRET = 500;
 int display_info = 21;
 const int temps = 250;
 
 void tiret(){
-  digitalWrite(BUZZER, HIGH);
+  analogWrite(BUZZER, TIRET);
   matrix.GenerateSquarre(1,4,1,250,130,10);
   matrix.GenerateSquarre(2,4,1,250,130,10);
   matrix.GenerateSquarre(3,4,1,250,130,10);
@@ -24,19 +26,19 @@ void tiret(){
   //matrix.GenerateSquarre(7,3,1,250,130,10);
   delay(3*temps);
   matrix.Clear();
-  digitalWrite(BUZZER, LOW);
+  analogWrite(BUZZER, LOW);
   delay(temps);
 }
 
 void point(){
-  digitalWrite(BUZZER, HIGH);
+  analogWrite(BUZZER, POINT);
   matrix.GenerateSquarre(2,2,1,250,130,10);
   matrix.GenerateSquarre(2,2,2,250,130,10);
   matrix.GenerateSquarre(2,2,3,250,130,10);
   matrix.GenerateSquarre(2,2,4,250,130,10);
   delay(temps);
   matrix.Clear();
-  digitalWrite(BUZZER, LOW);
+  analogWrite(BUZZER, LOW);
   delay(temps);
 }
 
